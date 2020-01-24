@@ -7,5 +7,6 @@ RUN apt -y install ffmpeg git && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 RUN pip3 install git+https://github.com/carrier-io/observer_video_client.git
 ADD observervideoclient.conf /etc/supervisor/conf.d/observervideoclient.conf
+ADD supervisorctrl.conf /etc/supervisor/conf.d/supervisorctrl.conf
 
 EXPOSE 9999

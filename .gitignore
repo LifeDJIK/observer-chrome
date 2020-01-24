@@ -72,6 +72,9 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+#Mac folder files
+.DS_Store
+
 # pyenv
 .python-version
 

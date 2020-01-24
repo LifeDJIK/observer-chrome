@@ -5,8 +5,8 @@ RUN apt-get update && apt-get upgrade -y python3 && apt-get install -y  software
 RUN add-apt-repository -y ppa:jonathonf/ffmpeg-4
 RUN apt -y install ffmpeg git && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
+ADD supervisord.conf /etc/supervisord.conf
 RUN pip3 install git+https://github.com/carrier-io/observer_video_client.git
 ADD observervideoclient.conf /etc/supervisor/conf.d/observervideoclient.conf
-ADD supervisorctrl.conf /etc/supervisor/conf.d/supervisorctrl.conf
 
 EXPOSE 9999

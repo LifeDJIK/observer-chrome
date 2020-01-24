@@ -1,4 +1,4 @@
-FROM selenium/standalone-chrome:3.141.59
+FROM selenium/standalone-chrome:3.141.59-vanadium
 
 USER root
 RUN apt-get update && apt-get upgrade -y python3 && apt-get install -y  software-properties-common python3-pip

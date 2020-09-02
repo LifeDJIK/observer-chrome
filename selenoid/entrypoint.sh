@@ -76,6 +76,8 @@ if [ "$ENABLE_VNC" == "true" ]; then
     X11VNC_PID=$!
 fi
 
+/usr/bin/supervisord --configuration /etc/supervisord.conf &
+
 DISPLAY="$DISPLAY" /usr/bin/selenoid -conf /home/selenium/browsers.json -disable-docker -timeout 1h -max-timeout 24h -enable-file-upload -capture-driver-logs &
 DRIVER_PID=$!
 

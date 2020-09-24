@@ -17,10 +17,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
     -
-       name: Build and push
-       uses: docker/build-push-action@v2
-       with:
-        context: .
-        file: ./selenoid/Dockerfile
-        push: true
-        tags: getcarrier/observer-chrome:test
+       name: Build
+       run: |
+          docker build -f ./selenoid/Dockerfile -t getcarrier/observer-chrome:84.0 . --build-arg VERSION=84.0

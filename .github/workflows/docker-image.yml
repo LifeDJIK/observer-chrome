@@ -20,3 +20,7 @@ jobs:
        name: Build
        run: |
           cd selenoid && docker build -f Dockerfile -t getcarrier/observer-chrome:84.0 . --build-arg VERSION=84.0
+    -
+       name: Push
+       run: |
+         docker push getcarrier/observer-chrome:84.0
